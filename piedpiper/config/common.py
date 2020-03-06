@@ -217,7 +217,7 @@ class Common(Configuration):
             'SUPERUSER_STATUS': False,  # The superuser status for new users
         },
         'ATTRIBUTES_MAP': {  # Change Email/UserName/FirstName/LastName to corresponding SAML2 userprofile attributes.
-            'email': 'mail',
+            'email': 'EmailAddress',
             'username': 'UserName',
             'first_name': 'FirstName',
             'last_name': 'LastName',

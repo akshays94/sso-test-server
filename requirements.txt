@@ -36,4 +36,5 @@ django-storages==1.8.0
 boto3==1.11.1
 
 django_saml2_auth
+python3-saml
 

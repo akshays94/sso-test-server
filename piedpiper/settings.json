@@ -16,13 +16,13 @@
         "privateKey": ""
     },
     "idp": {
-        "entityId": "https://app.onelogin.com/saml/metadata/398e7049-05d0-4966-a3f9-23bbd542b665",
+        "entityId": "https://app.onelogin.com/saml/metadata/09c00e96-cdec-4319-ab46-941b6d324ede",
         "singleSignOnService": {
-            "url": "https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/sso/398e7049-05d0-4966-a3f9-23bbd542b665",
+            "url": "https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/sso/09c00e96-cdec-4319-ab46-941b6d324ede",
             "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
         },
         "singleLogoutService": {
-            "url": "https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/slo/1093103",
+            "url": "https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/slo/1093850",
             "binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
         },
         "x509cert": "MIID8jCCAtqgAwIBAgIUHS0BOuJit6cmXOey7BopBNPaXv0wDQYJKoZIhvcNAQEFBQAwTDEXMBUGA1UECgwOcmhvbWJ1c2RldnRlYW0xFTATBgNVBAsMDE9uZUxvZ2luIElkUDEaMBgGA1UEAwwRT25lTG9naW4gQWNjb3VudCAwHhcNMjAwMzA1MTAxODQwWhcNMjUwMzA1MTAxODQwWjBMMRcwFQYDVQQKDA5yaG9tYnVzZGV2dGVhbTEVMBMGA1UECwwMT25lTG9naW4gSWRQMRowGAYDVQQDDBFPbmVMb2dpbiBBY2NvdW50IDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALgWSo4nwxvQ6EjFNSyXhcugM/pdptaT6ULhoq721UEcejB6NNBU27k+t09vWJR9OedezqDrmYvydl0QuMMAon0PXA7TLcsMR0jLjU4sAMdHzco9FpgFoLdqRiHohamjIvce9nf59RevNe8u99IXzulmYCElxvpJcutGVa3AzncExZsKPbqOuwR4TA7rsMzc8Vd/mq/RopksqRe9YGTLDgxI527QG0+XUHCZYs5dNEoZDr8oYAOO/uHDadidFRv9AhS5607SepXAizEbm0BlnlfNGpc+SXDLzbSLB06FMW525FzC14bCUnnmC/5zrUv29ZkDPyruE8dRAF22jAiyGR8CAwEAAaOByzCByDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQ7KCZ7KpavGFze/K+2ZRwbCiP9+zCBiAYDVR0jBIGAMH6AFDsoJnsqlq8YXN78r7ZlHBsKI/37oVCkTjBMMRcwFQYDVQQKDA5yaG9tYnVzZGV2dGVhbTEVMBMGA1UECwwMT25lTG9naW4gSWRQMRowGAYDVQQDDBFPbmVMb2dpbiBBY2NvdW50IIIUHS0BOuJit6cmXOey7BopBNPaXv0wDgYDVR0PAQH/BAQDAgeAMA0GCSqGSIb3DQEBBQUAA4IBAQAqI2hHrG/XIVLijuypEc4oQjrf5J22F77XzkrT5MbyhGksN++W1mOwRq2yXf62J/5NWB72zg4lNZiYpjpn0Yft0nwZioZP3+3oVJX6JceiV5ckrDFD0KZbkv0HO+m79W8pFwm5cPwDZkKguNokt142A0kqMhyTtBvqTdp+YpVTpKLg+1Jq//Z+eJMR+szN3UDVNDCznQs9E0HjhmK98rqpk3k2CRMJuk4JtI51e4wDXEcR0pfPsiF/Kifpwhb3x4R6vfWg255W8mpYTKA4QAKZBJ0/57r2kSydTyRKhITPEgltKz3GQfpqFGQoCb/M4bpwN0V0MlSkuuTRwwIxudZ3"
