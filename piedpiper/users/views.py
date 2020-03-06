@@ -32,7 +32,7 @@ class IndexViewset(viewsets.ViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request):
-        return Response({ 'message': 'index' })
+        return Response({ 'message': 'index 1' })
 
 
 class AttrsViewset(viewsets.ViewSet):
@@ -40,7 +40,7 @@ class AttrsViewset(viewsets.ViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request):
-        return Response({ 'message': 'attrs' })
+        return Response({ 'message': 'attrs 1' })
 
 
 
@@ -49,4 +49,4 @@ class MetadataViewset(viewsets.ViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request):
-        return Response({ 'message': 'metadata' })
+        return Response({ 'message': 'metadata 1' })
