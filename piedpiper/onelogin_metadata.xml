@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://app.onelogin.com/saml/metadata/398e7049-05d0-4966-a3f9-23bbd542b665">
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="https://app.onelogin.com/saml/metadata/09c00e96-cdec-4319-ab46-941b6d324ede">
   <IDPSSODescriptor xmlns:ds="http://www.w3.org/2000/09/xmldsig#" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
     <KeyDescriptor use="signing">
       <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -29,12 +29,12 @@ wwIxudZ3</ds:X509Certificate>
         </ds:X509Data>
       </ds:KeyInfo>
     </KeyDescriptor>
-    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/slo/1093103"/>
+    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/slo/1093850"/>
     
-      <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+      <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
     
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/sso/398e7049-05d0-4966-a3f9-23bbd542b665"/>
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-post/sso/398e7049-05d0-4966-a3f9-23bbd542b665"/>
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/soap/sso/398e7049-05d0-4966-a3f9-23bbd542b665"/>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-redirect/sso/09c00e96-cdec-4319-ab46-941b6d324ede"/>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/http-post/sso/09c00e96-cdec-4319-ab46-941b6d324ede"/>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://rhombusdevteam-dev.onelogin.com/trust/saml2/soap/sso/09c00e96-cdec-4319-ab46-941b6d324ede"/>
   </IDPSSODescriptor>
 </EntityDescriptor>

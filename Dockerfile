@@ -2,7 +2,7 @@ FROM python:3.8
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update && \
-    apt-get install -y libxmlsec1-dev
+    apt-get install -y libxmlsec1-dev xmlsec1
 
 # Allows docker to cache installed dependencies between builds
 COPY ./requirements.txt requirements.txt

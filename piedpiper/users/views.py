@@ -27,26 +27,26 @@ class UserCreateViewSet(mixins.CreateModelMixin,
     permission_classes = (AllowAny,)
 
 
-# class IndexViewset(viewsets.ViewSet):
+class IndexViewset(viewsets.ViewSet):
     
-#     permission_classes = [AllowAny]
+    permission_classes = [AllowAny]
 
-#     def list(self, request):
-#         return Response({ 'message': 'index' })
+    def list(self, request):
+        return Response({ 'message': 'index' })
 
 
-# class AttrsViewset(viewsets.ViewSet):
+class AttrsViewset(viewsets.ViewSet):
     
-#     permission_classes = [AllowAny]
+    permission_classes = [AllowAny]
 
-#     def list(self, request):
-#         return Response({ 'message': 'attrs' })
+    def list(self, request):
+        return Response({ 'message': 'attrs' })
 
 
 
-# class MetadataViewset(viewsets.ViewSet):
+class MetadataViewset(viewsets.ViewSet):
     
-#     permission_classes = [AllowAny]
+    permission_classes = [AllowAny]
 
-#     def list(self, request):
-#         return Response({ 'message': 'metadata' })
+    def list(self, request):
+        return Response({ 'message': 'metadata' })

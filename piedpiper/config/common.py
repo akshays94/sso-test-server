@@ -22,10 +22,10 @@ class Common(Configuration):
         'rest_framework.authtoken',  # token authentication
         'django_filters',            # for filtering rest endpoints
 
-        'django_saml2_auth',
 
         # Your apps
         'piedpiper.users',
+        'django_saml2_auth',
 
     )
 
@@ -209,7 +209,7 @@ class Common(Configuration):
 
         # Optional settings below
         'DEFAULT_NEXT_URL': '/admin',  # Custom target redirect URL after the user get logged in. Default to /admin if not set. This setting will be overwritten if you have parameter ?next= specificed in the login URL.
-        'CREATE_USER': 'TRUE', # Create a new Django user when a new user logs in. Defaults to True.
+        'CREATE_USER': False, # Create a new Django user when a new user logs in. Defaults to True.
         'NEW_USER_PROFILE': {
             'USER_GROUPS': [],  # The default group name when a new user logs in
             'ACTIVE_STATUS': True,  # The default active status for new users
@@ -226,9 +226,9 @@ class Common(Configuration):
             'CREATE_USER': 'path.to.your.new.user.hook.method',
             'BEFORE_LOGIN': 'path.to.your.login.hook.method',
         },
-        'ASSERTION_URL': 'https://mysite.com', # Custom URL to validate incoming SAML requests against
-        'ENTITY_ID': 'https://mysite.com/saml2_auth/acs/', # Populates the Issuer element in authn request
-        'NAME_ID_FORMAT': 'FormatString', # Sets the Format property of authn NameIDPolicy element
+        'ASSERTION_URL': 'https://damp-depths-85524.herokuapp.com', # Custom URL to validate incoming SAML requests against
+        'ENTITY_ID': 'https://damp-depths-85524.herokuapp.com/saml2_auth/acs/', # Populates the Issuer element in authn request
+        #'NAME_ID_FORMAT': 'FormatString', # Sets the Format property of authn NameIDPolicy element
         'USE_JWT': True, # Set this to True if you are running a Single Page Application (SPA) with Django Rest Framework (DRF), and are using JWT authentication to authorize client users
-        'FRONTEND_URL': 'https://optimistic-bassi-10c97a.netlify.com/', # Redirect URL for the client if you are using JWT auth with DRF. See explanation below
+        'FRONTEND_URL': 'https://optimistic-bassi-10c97a.netlify.com/home', # Redirect URL for the client if you are using JWT auth with DRF. See explanation below
     }

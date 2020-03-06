@@ -5,8 +5,7 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
-from .users.views import UserViewSet, UserCreateViewSet
-# , MetadataViewset, IndexViewset, AttrsViewset
+from .users.views import UserViewSet, UserCreateViewSet, MetadataViewset, IndexViewset, AttrsViewset
 
 from django.conf.urls import url
 
@@ -16,9 +15,9 @@ router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'users', UserCreateViewSet)
 
-# router.register(r'index', IndexViewset, basename='index')
-# router.register(r'attrs', AttrsViewset, basename='attrs')
-# router.register(r'metadata', MetadataViewset, basename='metadata')
+router.register(r'index', IndexViewset, basename='index')
+router.register(r'attrs', AttrsViewset, basename='attrs')
+router.register(r'metadata', MetadataViewset, basename='metadata')
 
 urlpatterns = [
     # These are the SAML2 related URLs. You can change "^saml2_auth/" regex to
