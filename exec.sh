@@ -12,6 +12,10 @@ elif [ "$1" == "migrate" ]; then
     echo -e "Migrating ..."
     docker-compose run web python manage.py migrate
 
+elif [ "$1" == "test" ]; then
+    echo -e "Trying to run tests ..."
+    docker-compose run web python manage.py test    
+
 elif [ "$1" == "up" ]; then
     echo -e "Starting ..."
     docker-compose up

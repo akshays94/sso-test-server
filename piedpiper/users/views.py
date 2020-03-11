@@ -1,3 +1,5 @@
+import os
+
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import AllowAny
 from .models import User
@@ -5,11 +7,18 @@ from .permissions import IsUserOrReadOnly
 from .serializers import CreateUserSerializer, UserSerializer
 
 from rest_framework.response import Response
+from django.http import HttpResponseRedirect
+
 from rest_framework.decorators import action
+
+from django.conf import settings
+from rest_framework.settings import api_settings
 
 from onelogin.saml2.auth import OneLogin_Saml2_Auth
 from onelogin.saml2.settings import OneLogin_Saml2_Settings
 from onelogin.saml2.utils import OneLogin_Saml2_Utils
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 class UserViewSet(mixins.RetrieveModelMixin,
                   mixins.UpdateModelMixin,
@@ -45,6 +54,8 @@ class AttrsViewset(viewsets.ViewSet):
     permission_classes = [AllowAny]
 
     def list(self, request):
+        # print('settings', settings.__dict__)
+        print('settings', BASE_DIR, os.path.join(BASE_DIR, 'settings.json'))
         return Response({ 'message': 'attrs 1' })
 
 
@@ -79,11 +90,11 @@ class ACSViewset(viewsets.ViewSet):
         print('req', req)
         print('\n\n')
 
-        auth = OneLogin_Saml2_Auth(req)
+        # settings_path = os.path.join(BASE_DIR, 'settings.json')
+        auth = OneLogin_Saml2_Auth(req, custom_base_path=BASE_DIR)
         print('\n', '-'*25)
         print('auth', auth)
         print('\n\n')
-
 
         auth.process_response()
         errors = auth.get_errors()
@@ -101,6 +112,16 @@ class ACSViewset(viewsets.ViewSet):
                 print('\n', '-'*25)
                 print('auth.get_attributes()', auth.get_attributes())
                 print('\n\n')
+
+                print('\n', '-'*25)
+                print('auth.get_settings()', auth.get_settings())
+                print('\n\n')
+
+                print('\n', '-'*25)
+                print('auth.get_nameid()', auth.get_nameid())
+                print('\n\n')
+
+                name_id=auth.get_nameid()
                 
                 request.session['samlUserdata'] = auth.get_attributes()
                 
@@ -112,8 +133,19 @@ class ACSViewset(viewsets.ViewSet):
                 print('OneLogin_Saml2_Utils.get_self_url(req)', OneLogin_Saml2_Utils.get_self_url(req))
                 print('\n\n')
 
+                print('\n', '-'*25)
+                print('\'RelayState\' in req[\'post_data\'] and OneLogin_Saml2_Utils.get_self_url(req) != req[\'post_data\'][\'RelayState\']', 'RelayState' in req['post_data'] and OneLogin_Saml2_Utils.get_self_url(req) != req['post_data']['RelayState'])
+                print('\n\n')   
+
                 if 'RelayState' in req['post_data'] and OneLogin_Saml2_Utils.get_self_url(req) != req['post_data']['RelayState']:
-                    auth.redirect_to(req['post_data']['RelayState'])
+                    print('auth.redirect_to(req[\'post_data\'][\'RelayState\'])', req['post_data']['RelayState'])
+                    # auth.redirect_to(req['post_data']['RelayState'])
+                    url = req['post_data']['RelayState']
+                    url = '{url}?isAuthenticated=true&email={email}'.format(**{
+                        'url': url,
+                        'email': name_id
+                    })
+                    return HttpResponseRedirect(redirect_to=url)
                 else:
                     for attr_name in request.session['samlUserdata'].keys():
                         print('%s ==> %s' % (attr_name, '|| '.join(request.session['samlUserdata'][attr_name])))
